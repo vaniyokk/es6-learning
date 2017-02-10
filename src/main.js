@@ -25,6 +25,10 @@ class UserES6 {
         this.email = email;
     }
 
+    static register(...args) {
+        return new User(...args);
+    }
+
     changeEmail(newEmail) {
         this.email = newEmail;
     }
@@ -32,9 +36,38 @@ class UserES6 {
     rename(name) {
         this.name = name;
     }
+
+    get foo() {
+        return 'foo';
+    }
 }
 
 var userES6 = new UserES6('Ivan', 'test@gmail.com');
 userES6.rename('Alex');
 
 console.dir(userES6);
+
+//class static method example
+console.dir(UserES6.register('Ivan', 'test@gmail.com'));
+
+//getter example
+console.log(userES6.foo);
+
+//class is first-class citizen
+function log(strategy) {
+    strategy.handle();
+}
+
+class ConsoleLogger{
+    handle() {
+        console.log('Using the ConsoleLogger to log');
+    }
+}
+
+log(new class {
+    handle() {
+        alert('Using the alert strategy to log');
+    }
+});
+
+log(new ConsoleLogger);
