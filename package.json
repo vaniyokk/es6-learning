@@ -4,13 +4,16 @@
   "description": "Study es2015",
   "main": "index.js",
   "scripts": {
-    "build": "babel src -d output"
+    "build": "webpack"
   },
   "author": "Ivan Kuzmin <kuzmin6969@gmail.com>",
   "license": "MIT",
   "devDependencies": {
     "babel-cli": "^6.22.2",
     "babel-preset-es2015": "^6.22.0",
+    "buble": "^0.15.2",
+    "buble-loader": "^0.4.0",
+    "path": "^0.12.7",
     "webpack": "^2.2.1"
   }
 }

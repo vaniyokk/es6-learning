@@ -1,7 +1,9 @@
-import TaskCollection, { foo } from './TaskCollection';
+export default class TaskCollection {
+    constructor(tasks = []) {
+        this.tasks = tasks;
+    }
 
-new TaskCollection([
-    'Go to the store',
-    'Finish learning ES6',
-    'So on'
-]).dump();
+    dump() {
+        console.log(this.tasks);
+    }
+}
